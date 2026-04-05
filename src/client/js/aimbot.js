@@ -4,40 +4,71 @@ import * as native from 'natives';
 export default class Aimbot {
     constructor() {
         this.enabled = true;
-        this.start();
+        this.fov = 30;
+        this.smoothing = 5;
+        this.target = null;
+        this.isRunning = false;
     }
     
     start() {
+        if (this.isRunning) return;
+        this.isRunning = true;
+        
         alt.everyTick(() => {
             if (!this.enabled) return;
-            
-            const players = alt.Player.all;
-            let closest = null;
-            let closestDist = 9999;
-            
-            for (const player of players) {
-                if (player === alt.Player.local) continue;
-                
-                const dist = this.getDistance(player.pos);
-                if (dist < closestDist && dist < 100) {
-                    closestDist = dist;
-                    closest = player;
-                }
-            }
-            
-            if (closest) {
-                const targetPos = closest.pos;
-                native.setPedShootsAtCoord(alt.Player.local.scriptID,
-                    targetPos.x, targetPos.y, targetPos.z, true);
-            }
+            try {
+                this.findTarget();
+                this.aimAtTarget();
+            } catch (e) {}
         });
     }
     
-    getDistance(pos) {
-        const localPos = alt.Player.local.pos;
-        const dx = localPos.x - pos.x;
-        const dy = localPos.y - pos.y;
-        const dz = localPos.z - pos.z;
-        return Math.sqrt(dx*dx + dy*dy + dz*dz);
+    stop() {
+        this.isRunning = false;
+    }
+    
+    findTarget() {
+        let closestDist = this.fov;
+        this.target = null;
+        
+        const players = alt.Player.all;
+        if (!players || players.length === 0) return;
+        
+        for (const player of players) {
+            if (!player || player === alt.Player.local) continue;
+            if (!player.pos) continue;
+            
+            try {
+                const screenPos = native.getScreenCoordFromWorldCoord(player.pos.x, player.pos.y, player.pos.z);
+                if (!screenPos) continue;
+                
+                const dist = Math.hypot(screenPos.x - 0.5, screenPos.y - 0.5) * 100;
+                
+                if (dist < closestDist && dist < this.fov) {
+                    closestDist = dist;
+                    this.target = player;
+                }
+            } catch (e) {}
+        }
+    }
+    
+    aimAtTarget() {
+        if (!this.target || !this.target.pos) return;
+        
+        try {
+            const targetPos = this.target.pos;
+            const localPos = alt.Player.local.pos;
+            if (!localPos) return;
+            
+            const dx = targetPos.x - localPos.x;
+            const dy = targetPos.y - localPos.y;
+            const dz = targetPos.z - localPos.z;
+            
+            const pitch = Math.atan2(dz, Math.hypot(dx, dy)) * (180 / Math.PI);
+            const yaw = Math.atan2(dy, dx) * (180 / Math.PI);
+            
+            native.setGameplayCamRelativePitch(pitch, 0);
+            native.setGameplayCamRelativeHeading(yaw);
+        } catch (e) {}
     }
 }
