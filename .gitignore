@@ -1,0 +1,13 @@
+build/
+logs/
+dumps/
+*.log
+*.exe
+*.sys
+*.dll
+*.enc
+*.key
+*.pyc
+__pycache__/
+.vscode/
+.idea/
