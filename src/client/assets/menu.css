@@ -1,1 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
 
+body {
+    background: transparent;
+    font-family: 'Orbitron', monospace;
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+}
+
+.menu-panel {
+    width: 500px;
+    background: linear-gradient(135deg, rgba(10, 10, 20, 0.95
