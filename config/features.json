@@ -1,0 +1,6 @@
+{
+    "aimbot": {"enabled": true, "fov": 30, "smoothing": 5},
+    "esp": {"enabled": true, "boxes": true, "health": true},
+    "vehicle": {"god_mode": true, "infinite_fuel": true},
+    "weapon": {"no_recoil": true, "infinite_ammo": true}
+}
