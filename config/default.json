@@ -1,1 +1,12 @@
-
+{
+    "version": "4.0",
+    "name": "MajesticCrypt GOD EDITION",
+    "features": {
+        "aimbot": { "enabled": true, "fov": 30 },
+        "esp": { "enabled": true },
+        "godMode": { "enabled": true }
+    },
+    "hotkeys": {
+        "openMenu": 45
+    }
+}
