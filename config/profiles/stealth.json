@@ -1,0 +1,5 @@
+{
+    "aimbot": {"enabled": false},
+    "esp": {"enabled": true, "opacity": 0.3},
+    "admin_evader": {"enabled": true, "alert_distance": 100}
+}
