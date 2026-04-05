@@ -1,0 +1,8 @@
+#pragma once
+
+// GTA V Offsets
+#define OFFSET_HEALTH 0x280
+#define OFFSET_ARMOR 0x284
+#define OFFSET_POSITION_X 0x30
+#define OFFSET_POSITION_Y 0x34
+#define OFFSET_POSITION_Z 0x38
