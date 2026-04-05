@@ -1,0 +1,6 @@
+{
+    "meteor_shower": {"enabled": true, "intensity": 20},
+    "tsunami": true,
+    "earthquake": {"magnitude": 9},
+    "zombies": true
+}
