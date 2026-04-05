@@ -1,1 +1,115 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MajesticCrypt Launcher 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+        body {
+            width: 100vw; height: 100vh;
+            background: linear-gradient(135deg, #000000, #0a0a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        .launcher {
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0,255,255,0.5);
+        }
+        .subtitle {
+            color: #00ffff;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            font-size: 12px;
+        }
+        .status {
+            color: #00ffff;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .progress-bar {
+            width: 300px;
+            height: 2px;
+            background: rgba(0,255,255,0.2);
+            margin: 0 auto 30px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            transition: width 0.3s ease;
+        }
+        button {
+            background: linear-gradient(135deg, rgba(0,255,255,0.2), rgba(255,0,255,0.2));
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            padding: 12px 30px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0,255,255,0.3);
+        }
+        .info {
+            margin-top: 30px;
+            color: rgba(0,255,255,0.5);
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="launcher">
+        <div class="logo">MAJESTIC CRYPT</div>
+        <div class="subtitle">GOD EDITION 2026</div>
+        <div class="status" id="status">INITIALIZING...</div>
+        <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+        <button id="injectBtn" disabled>INJECT CHEAT</button>
+        <button id="exitBtn">EXIT</button>
+        <div class="info">Press INSERT in game to open menu</div>
+    </div>
+    <script>
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10;
+            document.getElementById('progress').style.width = progress + '%';
+            if (progress >= 100) {
+                clearInterval(interval);
+                document.getElementById('status').innerHTML = 'READY';
+                document.getElementById('injectBtn').disabled = false;
+            }
+        }, 300);
+        
+        document.getElementById('injectBtn').onclick = () => {
+            document.getElementById('status').innerHTML = 'INJECTING...';
+            setTimeout(() => {
+                document.getElementById('status').innerHTML = 'INJECTED!';
+                setTimeout(() => window.close(), 1000);
+            }, 2000);
+        };
+        
+        document.getElementById('exitBtn').onclick = () => window.close();
+    </script>
+</body>
+</html>
