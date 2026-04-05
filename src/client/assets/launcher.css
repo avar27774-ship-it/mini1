@@ -1,1 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
 
+body {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #000000, #0a0a1a);
+    font-family: 'Orbitron', monospace;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,255,255,0.15), transparent);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.logo {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.letter {
+    font-size: 70px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(0,255,255,0.5);
+    animation: float 2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.letter:nth-child(1) { --i: 0; }
+.letter:nth-child(2) { --i: 1; }
+.letter:nth-child(3) { --i: 2; }
+.letter:nth-child(4) { --i: 3; }
+.letter:nth-child(5) { --i: 4; }
+.letter:nth-child(6) { --i: 5; }
+.letter:nth-child(7) { --i: 6; }
+.letter:nth-child(8) { --i: 7; }
+.letter:nth-child(9) { --i: 8; }
+.letter:nth-child(10) { --i: 9; }
+.letter:nth-child(11) { --i: 10; }
+.letter:nth-child(12) { --i: 11; }
+.letter:nth-child(13) { --i: 12; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 8px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 30px;
+}
+
+.status {
+    font-size: 12px;
+    color: rgba(0,255,255,0.7);
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 2px;
+    background: rgba(0,255,255,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    animation: progress 3s ease-out forwards;
+}
+
+@keyframes progress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+.inject-btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, rgba(0,255,255,0.2), rgba(255,0,255,0.2));
+    border: 1px solid rgba(0,255,255,0.5);
+    border-radius: 10px;
+    font-family: 'Orbitron', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: #00ffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.inject-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0,255,255,0.3);
+    border-color: #00ffff;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 10px;
+    color: rgba(0,255,255,0.3);
+    letter-spacing: 2px;
+}
