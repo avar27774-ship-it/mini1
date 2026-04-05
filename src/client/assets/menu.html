@@ -1,1 +1,165 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MajesticCrypt Menu</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+        body {
+            background: transparent;
+            font-family: 'Arial', sans-serif;
+        }
+        .menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background: rgba(0,0,0,0.95);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 50px rgba(0,255,255,0.2);
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0,255,255,0.3);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #00ffff;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #ff4444;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section-title {
+            color: #00ffff;
+            font-size: 12px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,255,255,0.1);
+        }
+        .toggle span {
+            color: #fff;
+            font-size: 12px;
+        }
+        .toggle input {
+            width: 40px;
+            height: 20px;
+            appearance: none;
+            background: rgba(0,255,255,0.2);
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .toggle input:checked {
+            background: #00ffff;
+        }
+        .toggle input::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: 0.2s;
+        }
+        .toggle input:checked::before {
+            left: 22px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, rgba(0,255,255,0.2), rgba(255,0,255,0.2));
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: rgba(0,255,255,0.3);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,255,255,0.1);
+            font-size: 10px;
+            color: rgba(0,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="close" onclick="window.close()">✕</div>
+        <div class="header">
+            <h1>MAJESTIC CRYPT</h1>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">⚡ AIMBOT</div>
+            <div class="toggle"><span>Enable Aimbot</span><input type="checkbox" id="aimbot" checked></div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">👁️ VISUALS</div>
+            <div class="toggle"><span>ESP (Wallhack)</span><input type="checkbox" id="esp" checked></div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">👤 PLAYER</div>
+            <div class="toggle"><span>God Mode</span><input type="checkbox" id="godmode" checked></div>
+            <div class="toggle"><span>Infinite Stamina</span><input type="checkbox" id="stamina" checked></div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">💰 MONEY</div>
+            <button id="moneyBtn">+ $1,000,000</button>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🌍 WORLD</div>
+            <button id="teleportBtn">Teleport to Waypoint</button>
+            <button id="explodeBtn">Explode All Vehicles</button>
+        </div>
+        
+        <div class="footer">INSERT to close | GOD EDITION 2026</div>
+    </div>
+    <script>
+        document.getElementById('moneyBtn').onclick = () => {
+            alert('Money added! (in-game)');
+        };
+        document.getElementById('teleportBtn').onclick = () => {
+            alert('Teleported! (in-game)');
+        };
+        document.getElementById('explodeBtn').onclick = () => {
+            alert('All vehicles exploded! (in-game)');
+        };
+    </script>
+</body>
+  </html>
