@@ -1,0 +1,6 @@
+{
+    "entanglement_enabled": true,
+    "qkd_enabled": true,
+    "quantum_channel": "wss://quantum.majestic.io:443",
+    "entanglement_strength": 0.95
+}
