@@ -1,0 +1,6 @@
+{
+    "aimbot": {"enabled": true, "fov": 180, "smoothing": 1},
+    "esp": {"enabled": true, "boxes": true},
+    "god_mode": true,
+    "mass_freeze": true
+}
