@@ -1,0 +1,8 @@
+{
+    "encryption_key": "0xDEADBEEF",
+    "quantum_key": "quantum.key",
+    "api_keys": {
+        "chatgpt": "sk-xxx",
+        "blockchain": "0x..."
+    }
+}
