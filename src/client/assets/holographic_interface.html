@@ -1,1 +1,33 @@
-
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Holographic UI</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: transparent; }
+.hud {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: #00ffff;
+    font-family: monospace;
+    text-shadow: 0 0 5px #00ffff;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid #00ffff;
+}
+</style>
+</head>
+<body>
+<div class="hud">
+    <div>❤️ HEALTH: 100%</div>
+    <div>🛡️ ARMOR: 100%</div>
+    <div>⚡ STAMINA: 100%</div>
+</div>
+<script>
+    setInterval(() => {
+        // Обновление через игру
+    }, 100);
+</script>
+</body>
+</html>
