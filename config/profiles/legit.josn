@@ -1,0 +1,5 @@
+{
+    "aimbot": {"enabled": true, "fov": 15, "smoothing": 15},
+    "esp": {"enabled": false},
+    "god_mode": false
+}
