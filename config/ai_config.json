@@ -1,0 +1,6 @@
+{
+    "aimbot_model": "models/aimbot_v4.h5",
+    "esp_model": "models/esp_v3.h5",
+    "prediction_accuracy": 0.99,
+    "autopilot_enabled": false
+}
