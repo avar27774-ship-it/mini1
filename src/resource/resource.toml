@@ -1,1 +1,10 @@
+type = 'client'
+main = 'client.js'
+name = 'majestic_crypt'
+version = '4.0.0'
+author = 'S010lvloon'
 
+[[dependencies]]
+type = 'js'
+name = 'natives'
+version = '1.0.0'
