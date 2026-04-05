@@ -1,1 +1,11 @@
-
+{
+    "god_mode": true,
+    "divine_powers": {
+        "lightning": { "cooldown": 5000, "damage": 1000 },
+        "curse": { "duration": 30 },
+        "time_stop": { "duration": 10 }
+    },
+    "apocalypse": {
+        "meteor_shower": { "duration": 30, "intensity": 10 }
+    }
+}
