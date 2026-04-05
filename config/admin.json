@@ -1,1 +1,5 @@
-
+{
+    "admins": ["AdminName1", "AdminName2"],
+    "alert_distance": 50,
+    "auto_panic": true
+}
