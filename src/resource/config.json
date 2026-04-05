@@ -1,0 +1,9 @@
+{
+    "name": "majestic_crypt",
+    "version": "4.0.0",
+    "author": "S010lvloon",
+    "settings": {
+        "autoInject": true,
+        "stealthMode": true
+    }
+}
